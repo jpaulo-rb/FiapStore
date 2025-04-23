@@ -22,7 +22,7 @@ public class OracleUsuarioDao implements UsuarioDAO {
         try {
             conexao = ConnectionManager.getInstance().getConnection();
 
-            String sql = "SELECT * FROM USUARIO WHERE EMAIL = ? AND SENHA = ?";
+            String sql = "SELECT * FROM FS_USUARIO WHERE EMAIL = ? AND SENHA = ?";
 
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, usuario.getEmail());

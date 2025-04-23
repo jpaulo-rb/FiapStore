@@ -6,9 +6,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fiapstore</groupId>
-    <artifactId>fiapStore</artifactId>
+    <artifactId>FiapStore</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>fiapStore</name>
+    <name>FiapStore</name>
     <packaging>war</packaging>
 
     <properties>

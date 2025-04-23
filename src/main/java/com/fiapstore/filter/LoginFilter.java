@@ -19,7 +19,7 @@ public class LoginFilter implements Filter {
         String url = req.getRequestURI();
 
         boolean logado = session.getAttribute("user") != null;
-        boolean acessoLogin = url.contains("home") || url.endsWith("login");
+        boolean acessoLogin = url.endsWith("home") || url.endsWith("login");
         boolean recursos = url.contains("resources");
 
         if (!logado && !acessoLogin && !recursos)  {

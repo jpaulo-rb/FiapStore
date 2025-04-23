@@ -22,7 +22,7 @@ public class OracleProdutoDao implements ProdutoDao {
     public void cadastrar(Produto produto) throws DBException {
         PreparedStatement stmt = null;
         conexao = ConnectionManager.getInstance().getConnection();
-        String sql = "INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, CATEGORIA) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO FS_PRODUTO (NOME, VALOR, QUANTIDADE, CATEGORIA) VALUES (?, ?, ?, ?)";
 
         try {
             stmt = conexao.prepareStatement(sql);
@@ -51,7 +51,7 @@ public class OracleProdutoDao implements ProdutoDao {
         PreparedStatement stmt = null;
         try {
             conexao = ConnectionManager.getInstance().getConnection();
-            String sql = "UPDATE PRODUTO SET NOME = ?, VALOR = ?, QUANTIDADE = ?, CATEGORIA = ? WHERE ID = ?";
+            String sql = "UPDATE FS_PRODUTO SET NOME = ?, VALOR = ?, QUANTIDADE = ?, CATEGORIA = ? WHERE ID = ?";
             stmt = conexao.prepareStatement(sql);
             valores(produto, stmt);
             stmt.setInt(5, produto.getId());
@@ -83,7 +83,7 @@ public class OracleProdutoDao implements ProdutoDao {
         PreparedStatement stmt = null;
         try {
             conexao = ConnectionManager.getInstance().getConnection();
-            String sql = "DELETE FROM PRODUTO WHERE ID = ?";
+            String sql = "DELETE FROM FS_PRODUTO WHERE ID = ?";
             stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -109,7 +109,7 @@ public class OracleProdutoDao implements ProdutoDao {
         ResultSet rs = null;
         try {
             conexao = ConnectionManager.getInstance().getConnection();
-            String sql = "SELECT * FROM PRODUTO LEFT JOIN CATEGORIA ON (PRODUTO.CATEGORIA = CATEGORIA.ID) WHERE PRODUTO.ID = ?";
+            String sql = "SELECT * FROM FS_PRODUTO LEFT JOIN FS_CATEGORIA ON (FS_PRODUTO.CATEGORIA = FS_CATEGORIA.ID) WHERE FS_PRODUTO.ID = ?";
             stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
             rs = stmt.executeQuery();
@@ -150,7 +150,7 @@ public class OracleProdutoDao implements ProdutoDao {
         ResultSet rs = null;
         try {
             conexao = ConnectionManager.getInstance().getConnection();
-            String sql = "SELECT * FROM PRODUTO LEFT JOIN CATEGORIA ON (PRODUTO.CATEGORIA = CATEGORIA.ID) ORDER BY 1";
+            String sql = "SELECT * FROM FS_PRODUTO LEFT JOIN FS_CATEGORIA ON (FS_PRODUTO.CATEGORIA = FS_CATEGORIA.ID) ORDER BY 1";
             stmt = conexao.prepareStatement(sql);
             rs = stmt.executeQuery();
 

@@ -24,7 +24,7 @@ public class OracleCategoriaDao implements CategoriaDao {
 
         try {
             conexao = ConnectionManager.getInstance().getConnection();
-            stmt = conexao.prepareStatement("SELECT * FROM CATEGORIA");
+            stmt = conexao.prepareStatement("SELECT * FROM FS_CATEGORIA");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
