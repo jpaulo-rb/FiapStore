@@ -17,11 +17,11 @@
             <div class="card-header">
                 LISTA DE PRODUTOS
             </div>
-            <c:if test ="${not empty mensagem}">
+            <c:if test="${not empty mensagem}">
                 <div class="alert alert-success ms-2 me-2 mt-2"> ${mensagem} </div>
             </c:if>
 
-            <c:if test ="${not empty erro}">
+            <c:if test="${not empty erro}">
                 <div class="alert alert-danger ms-2 me-2 mt-2"> ${erro} </div>
             </c:if>
             <div class="card-body">
@@ -35,7 +35,7 @@
                         <th class="text-end">Quantidade</th>
                         <th class="text-center">Data de fabricação</th>
                         <th class="text-center">Categoria</th>
-                        <th class="text-center"></th>
+                        <th class="text-center">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,36 +46,39 @@
                             <td class="text-end">${produto.quantidade}</td>
                             <td class="text-center">
                                 <fmt:parseDate
-                                        value = "${produto.dataCriacao}"
+                                        value="${produto.dataCriacao}"
                                         pattern="yyyy-MM-dd"
-                                        var = "dataCriacaoFmt" />
+                                        var="dataCriacaoFmt"/>
                                 <fmt:formatDate
-                                    value = "${dataCriacaoFmt}"
-                                    pattern="dd/MM/yyyy" />
+                                        value="${dataCriacaoFmt}"
+                                        pattern="dd/MM/yyyy"/>
                             </td>
                             <td class="text-center">
-                                    <c:if test="${produto.categoria.categoria == null}">
-                                        -
-                                    </c:if>
-                                    <c:if test="${produto.categoria.categoria != null}">
-                                        ${produto.categoria.categoria}
-                                    </c:if>
+                                <c:if test="${produto.categoria.categoria == null}">
+                                    -
+                                </c:if>
+                                <c:if test="${produto.categoria.categoria != null}">
+                                    ${produto.categoria.categoria}
+                                </c:if>
                             </td>
                             <td class="text-center">
-                                <c:url value="produtos" var="link">
-                                    <c:param name="acao" value="abrir-form-edicao"/>
-                                    <c:param name="id" value="${produto.id}"/>
-                                </c:url>
-                                <a href="${link}" class="btn btn-primary">Editar</a>
-                                <!-- Botão para abrir o modal -->
-                                <button
-                                    type="button"
-                                    class="btn btn-danger"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#excluirModal"
-                                    onclick="idExcluir.value = ${produto.id}; nomeExcluir.value = '${produto.nome}'"
-                                > Excluir
-                                </button>
+                                <div class="d-flex justify-content-center">
+                                    <c:url value="produtos" var="link">
+                                        <c:param name="acao" value="abrir-form-edicao"/>
+                                        <c:param name="id" value="${produto.id}"/>
+                                    </c:url>
+                                    <a href="${link}" class="btn btn-primary m-2">Editar</a>
+                                    <!-- Botão para abrir o modal -->
+
+                                    <button
+                                            type="button"
+                                            class="btn btn-danger m-2"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#excluirModal"
+                                            onclick="idExcluir.value = ${produto.id}; nomeExcluir.value = '${produto.nome}'"
+                                    > Excluir
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     </c:forEach>
@@ -107,6 +110,7 @@
                         class="btn-close"
                         data-bs-dismiss="modal"
                         aria-label="Close">
+                    X
                 </button>
             </div>
             <div class="modal-body">
@@ -148,6 +152,6 @@
 <%--    fim modal--%>
 
 <%@include file="footer.jsp" %>
-<script src="resources/js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
