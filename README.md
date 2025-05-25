@@ -1,9 +1,32 @@
-# Projeto FiapStore
-Aplicação Web Java
-- Front-end com JSP e JSTL para páginas dinâmicas
-- Back-end com Servlets e integração via JDBC com banco Oracle
-- Arquitetura baseada no padrão MVC (Model-View-Controller)
-- Estilização com HTML, CSS e Bootstrap
-- Envio de e-mails com Jakarta Mail e Angus Mail
-- Filtro de autenticação para verificação de login do usuário
-- Criptografia de senhas com algoritmo MD5
+# FiapStore - Aplicação Web Java
+
+*Projeto desenvolvido para fins acadêmicos.*
+
+Aplicação web construída em Java com foco em práticas modernas de desenvolvimento web utilizando o padrão MVC. A aplicação simula uma loja virtual com funcionalidades de autenticação, visualização de produtos e envio de e-mails, integrando diversas tecnologias do ecossistema Java EE.
+
+---
+
+## Tecnologias Utilizadas
+
+- **Java + Servlets** — Lógica de back-end
+- **JSP + JSTL** — Geração dinâmica de páginas no front-end
+- **JDBC com Oracle** — Integração com banco de dados relacional
+- **HTML + CSS + Bootstrap** — Estilização e responsividade da interface
+- **Jakarta Mail + Angus Mail** — Envio de e-mails automatizados
+- **MD5** — Criptografia de senhas
+- **Filtro de autenticação** — Proteção de rotas por login
+
+---
+
+## Arquitetura
+
+- **MVC (Model-View-Controller)** — Separação clara entre regras de negócio, visualização e controle
+
+---
+
+## Funcionalidades de Destaque
+
+- Cadastro e login de usuários
+- Criptografia de senhas no armazenamento
+- Filtro de acesso por autenticação
+- Envio automático de e-mail em eventos definidos
