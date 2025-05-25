@@ -1,4 +1,4 @@
-# FiapStore - Aplicação Web Java
+# FiapStore – Simulação de Loja Virtual Web
 
 *Projeto desenvolvido para fins acadêmicos.*
 
