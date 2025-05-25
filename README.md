@@ -1,8 +1,8 @@
-# FiapStore – Simulação de Loja Virtual Web
+# FiapStore – Simulação de Loja Virtual Web (Java MVC)
 
 *Projeto desenvolvido para fins acadêmicos.*
 
-Aplicação web construída em Java com foco em práticas modernas de desenvolvimento web utilizando o padrão MVC. A aplicação simula uma loja virtual com funcionalidades de autenticação, visualização de produtos e envio de e-mails, integrando diversas tecnologias do ecossistema Java EE.
+Aplicação web construída em Java que simula uma loja virtual, com funcionalidades de autenticação de usuários, cadastro, visualização e exclusão de produtos, além de envio automatizado de e-mails. O projeto segue o padrão arquitetural MVC e integra tecnologias do ecossistema Java EE.
 
 ---
 
@@ -26,7 +26,8 @@ Aplicação web construída em Java com foco em práticas modernas de desenvolvi
 
 ## Funcionalidades de Destaque
 
-- Cadastro e login de usuários
-- Criptografia de senhas no armazenamento
-- Filtro de acesso por autenticação
-- Envio automático de e-mail em eventos definidos
+- Autenticação de usuários
+- Cadastro, listagem e exclusão de produtos
+- Criptografia de senhas
+- Filtro de acesso por login
+- Envio de e-mails automatizados
